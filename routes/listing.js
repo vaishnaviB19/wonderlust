@@ -4,9 +4,8 @@ const Listing=require('../models/listing');
 const wrapAsync=require("../utils/wrapAsync.js");
 const { isLoggedIn } = require("../views/middleware.js");
 const {validateListing}=require("../views/middleware.js");
-const multer  = require('multer')
-const {storage} =require("../cloudConfig.js");
-const upload = multer({ storage })
+const cloudinary = require('../cloudConfig.js');
+const upload = require('../uploadMiddleware');
 
 const listingController =require("../controllers/listings.js");
 //index route
